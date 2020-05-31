@@ -38,10 +38,10 @@ class MainFragment : Fragment() {
         val activity: MainActivity? = activity as MainActivity?
         val image =activity!!.returnCapturedImage()
         if (image!=null) {
-            val imageRotated = image.rotate(90F)
 
 
-            layout_display_image_camera.setImageBitmap(imageRotated)
+
+            layout_display_image_camera.setImageBitmap(image)
 
 
         }
@@ -52,10 +52,7 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
 
     }
-    fun Bitmap.rotate(degrees: Float): Bitmap {
-        val matrix = Matrix().apply { postRotate(degrees) }
-        return Bitmap.createBitmap(this, 0, 0, width, height, matrix, true)
-    }
+
 
 
 
