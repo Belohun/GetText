@@ -198,7 +198,7 @@ private fun analizeOnce(){
                     val rotationDegrees = image.imageInfo.rotationDegrees
                     val bitmap = it.toBitmap(rotationDegrees)
                     val resizedBitmap = resizeBitmap(bitmap,layout_camera.width,layout_camera.height)
-                    cropedImage = cropImage(bitmap,layout_camera,layout_camera_small)
+                    cropedImage = cropImage(resizedBitmap,layout_camera,layout_camera_small)
                     super.onCaptureSuccess(image)
                 }
               //  val resizedBitmap = resizeBitmap(imageBitmap,layout_camera.width,layout_camera.height)
